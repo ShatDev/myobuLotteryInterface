@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="214" height="215" viewBox="0 0 214 215">
+    <defs>
+        <linearGradient id="hbgojsju1b" x1="50%" x2="16.827%" y1="29.652%" y2="70.348%">
+            <stop offset="0%" stop-color="#00D0FF"/>
+            <stop offset="45.288%" stop-color="#00D2AB"/>
+            <stop offset="100%" stop-color="#FF2DB1"/>
+        </linearGradient>
+        <filter id="vsqsnhh5ca" width="463.8%" height="457.6%" x="-181.9%" y="-178.8%" filterUnits="objectBoundingBox">
+            <feOffset dx="-10" dy="21" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="17"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.337981111 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g filter="url(#vsqsnhh5ca)" transform="translate(-1288.000000, -323.000000) translate(1366.000000, 401.000000)">
+                <g fill="url(#hbgojsju1b)">
+                    <path d="M58 0L0 30.184 29.483 37z"/>
+                </g>
+                <path fill="#8F75F9" d="M57 0L29 37.067 31.949 59z"/>
+                <path fill="#462B99" d="M32 59L29.042 36.885 0 30z"/>
+            </g>
+        </g>
+    </g>
+</svg>
