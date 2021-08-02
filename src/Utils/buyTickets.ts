@@ -16,7 +16,7 @@ export default async function buyTickets(
     /// and the beggining of each error (put inside the contract)
     return Error(
       `Could not buy tickets: ${
-        e.error.message.replace('execution reverted: MLT: ', '') || e
+        e.error.message.replace('execution reverted: FoF: ', '') || e
       }`
     )
   }
