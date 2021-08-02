@@ -79,6 +79,7 @@ const SpacedBetween = styled.div`
 `
 
 const AddressText = styled(SmallText)`
+  clear: both;
   @media only screen and (max-width: 700px) {
     font-size: 13px;
   }
