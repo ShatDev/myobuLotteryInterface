@@ -1,16 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { centered } from '../Utils/index'
 
 const Outer = styled.div`
   width: 196px;
   height: 70px;
   border-radius: 10px;
   background-color: #351450;
+  text-align: center;
 `
 
 const AmountText = styled.span`
-  ${centered}
   font-family: MerriweatherSansRoman;
   font-size: 20px;
   font-weight: 800;
@@ -23,7 +22,6 @@ const AmountText = styled.span`
 `
 
 const NextRound = styled.span`
-  ${centered}
   font-family: MerriweatherSansRoman;
   font-size: 14px;
   font-weight: bold;
