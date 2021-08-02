@@ -179,7 +179,7 @@ const LotteryRound = ({
             color="#412b54"
             marginLeft="2.55vw"
             marginTop="15px"
-            style={{ fontSize: '13px' }}
+            style={{ fontSize: '13px', clear: 'both' }}
           >
             Your $MYOBU wallet
           </SmallText>
