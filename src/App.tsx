@@ -44,7 +44,19 @@ const OnlyMobileLotteryImage = styled.img`
 `
 
 function App() {
-  const [info, setInfo] = useState<LotteryInfo | null>()
+  const [info, setInfo] = useState<LotteryInfo | null>({
+    endTimestamp: 0,
+    shrineFee: '0%',
+    currentJackpot: '0',
+    nextRound: '0',
+    percentageToNextRound: '0%',
+    percentageToCurrentRound: '0%',
+    ticketPrice: '0',
+    ticketsSold: '0',
+    minimumMyobuBalance: '0',
+    myobuForEachTicket: '0',
+    currentRoundNumber: '0',
+  })
   const forceUpdate = React.useReducer(() => ({}), {})[1] as () => void
   useEffect(() => {
     if (!info) {
@@ -76,13 +88,13 @@ function App() {
         </InfoDivision>
       </Lottery>
       <LotteryRound
-        currentTicketPrice={`${info?.ticketPrice} ETH`}
-        shrineFee={info?.shrineFee!}
-        timeUntilDraw={info?.endTimestamp!}
-        jackpot={`${info?.currentJackpot.toFixed(3)} ETH`}
-        ethForNextRound={`${info?.nextRound.toFixed(3)} ETH`}
-        ticketsSold={info?.ticketsSold!}
-        currentRoundNumber={info?.currentRoundNumber!}
+        currentTicketPrice={`${info.ticketPrice} ETH`}
+        shrineFee={info.shrineFee}
+        timeUntilDraw={info.endTimestamp}
+        jackpot={`${info.currentJackpot.toFixed(3)} ETH`}
+        ethForNextRound={`${info.nextRound.toFixed(3)} ETH`}
+        ticketsSold={info.ticketsSold}
+        currentRoundNumber={info.currentRoundNumber}
       />
     </div>
   )
