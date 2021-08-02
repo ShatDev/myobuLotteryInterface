@@ -103,6 +103,9 @@ const Tickets = ({ ticketPrice, style, onClick }: ticketsProps) => {
     )
     if (r instanceof Error) {
       displayError(r.message)
+    } else {
+      /// reset error displayed
+      displayError('');
     }
   }
 

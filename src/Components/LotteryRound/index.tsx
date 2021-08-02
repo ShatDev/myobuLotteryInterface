@@ -131,6 +131,8 @@ const LotteryRound = ({
         address: r[0].address,
         ticketsOwned: r[1].ticketsOwned,
       })
+      /// reset error displayed
+      displayError('');
     } else {
       displayError(r.message)
     }
