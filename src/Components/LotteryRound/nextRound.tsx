@@ -22,6 +22,7 @@ const AmountText = styled.span`
 `
 
 const NextRound = styled.span`
+  clear: both;
   font-family: MerriweatherSansRoman;
   font-size: 14px;
   font-weight: bold;
