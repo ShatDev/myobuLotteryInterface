@@ -44,6 +44,7 @@ const OnlyMobileLotteryImage = styled.img`
 `
 
 function App() {
+  // Set to 0/0% when loading
   const [info, setInfo] = useState<LotteryInfo | null>({
     endTimestamp: 0,
     shrineFee: '0%',
