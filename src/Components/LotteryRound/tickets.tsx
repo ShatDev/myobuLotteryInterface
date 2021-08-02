@@ -97,7 +97,7 @@ const Tickets = ({ ticketPrice, style, onClick }: ticketsProps) => {
   const [ticketsPrice, setTicketsPrice] = useState<number | string>()
 
   async function buyTicketsAndUpdateUI() {
-    let r = await buyTickets(parseInt(textInput.current!.value) || 0, ticketPrice)
+    let r = await buyTickets(parseInt(textInput.current!.value) || 1, ticketPrice)
     if (r instanceof Error) {
       displayError(r.message)
     }
