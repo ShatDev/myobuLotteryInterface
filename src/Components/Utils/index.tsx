@@ -9,12 +9,12 @@ export const unselectable = css`
   pointer-events: none;
 `
 
-export const Centered = styled.div`
-  ${centered}
-`
-
 export const centered = css`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+
+export const Centered = styled.div`
+  ${centered}
 `
