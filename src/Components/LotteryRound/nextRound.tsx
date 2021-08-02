@@ -41,7 +41,7 @@ interface nextRoundInterface {
 const nextRound = ({ amountForNextRound, style }: nextRoundInterface) => (
   <Outer style={style}>
     <AmountText>{amountForNextRound}</AmountText>
-    <div style={{ clear: 'both' }} />
+    <br />
     <NextRound>Next Round</NextRound>
   </Outer>
 )
