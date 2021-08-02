@@ -10,9 +10,7 @@ export const unselectable = css`
 `
 
 export const Centered = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${centered}
 `
 
 export const centered = css`
