@@ -60,13 +60,14 @@ const Info = styled.div<{ float?: string }>`
   margin-left: ${(props) => (props.float === 'left' ? '3vw' : '0')};
 `
 
-const bottomedText = {
-  alignSelf: 'flex-end',
-  marginLeft: '10px',
-  marginBottom: '1.5vh',
-  width: '100%',
-  textAlign: 'center',
-} as React.CSSProperties
+const TicketsSoldText = styled(SmallText)`
+  align-self: flex-end;
+  margin-left: 10px;
+  margin-bottom: 1.5vh;
+  width: 100%;
+  text-align: center;
+  color: black;
+`
 
 const Colored = styled.span`
   color: #8a2adb;
@@ -212,10 +213,10 @@ const LotteryRound = ({
       </LotteryRoundBody>
       {/* prettier-ignore */}
       {connection.isConnected ? (
-        <SmallText style={bottomedText} color="black">
+        <TicketsSoldText>
           <Colored> {ticketsSold} tickets sold </Colored> in total
           {/*and your <Colored> chances to win are {((1 / ticketsSold) * 100).toFixed(2)}% per ticket. </Colored>*/}
-        </SmallText>
+        </TicketsSoldText>
       ) : null}
     </LotteryRoundOuter>
   )
