@@ -105,7 +105,7 @@ const Tickets = ({ ticketPrice, style, onClick }: ticketsProps) => {
       displayError(r.message)
     } else {
       /// reset error displayed
-      displayError('');
+      displayError('')
     }
   }
 

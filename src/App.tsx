@@ -59,8 +59,8 @@ function App() {
     currentRoundNumber: 0,
   })
   async function updateInfo() {
-     let __info = await fetchLotteryInformation()
-     setInfo(__info)
+    let __info = await fetchLotteryInformation()
+    setInfo(__info)
   }
   useEffect(() => {
     // 0 is default
@@ -75,7 +75,7 @@ function App() {
   })
   // prettier-ignore
   return (
-    <div style={{ width: '100%', overflowX: 'hidden', position: 'absolute' }}>
+    <div style={{ width: '100%', height: '100%', overflowX: 'hidden', position: 'absolute' }}>
       <Lottery>
         <BigText>
           FOUNTAIN <br /> OF FORTUNE
