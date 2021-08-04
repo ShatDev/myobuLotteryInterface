@@ -10,8 +10,7 @@ import { Lottery__factory } from '../Abis/typechain/factories/Lottery__factory'
 export let userProvider: connectedWallet | null
 export let Contract: Lottery | null
 export const InfuraProvider = new ethers.providers.InfuraProvider(
-  contracts.network,
-  contracts.infuraProjectKey
+  contracts.network
 )
 export const InfuraConnectedContract = Lottery__factory.connect(
   contracts.contractAddress,
