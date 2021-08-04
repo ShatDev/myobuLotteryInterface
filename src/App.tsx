@@ -82,7 +82,7 @@ function App() {
         </BigText>
         <OnlyMobileLotteryImage src={lotteryImage} />
         {/* prettier-ignore */}
-        <DescriptionText>Welcome Guardian, to the Fountain Of Fortune! Throw some ETH in the magic fountain and receive your tickets. When the countdown hits 0, one lucky ticket holder will be awarded all the ETH in the prize pool.  Do you dare to test your luck? Read here for more details: <a href="https://medium.com">Medium</a></DescriptionText>
+        <DescriptionText>Welcome Guardian, to the Fountain Of Fortune! Throw some ETH in the magic fountain and receive your tickets. When the countdown hits 0, one lucky ticket holder will be awarded all the ETH in the prize pool.  Do you dare to test your luck? Read here for more details: <a href="https://myobu.medium.com/introducing-the-fountain-of-fortune-d5f9557369b1">Medium</a></DescriptionText>
         <InfoDivision>
           <Info infoValue={info.percentageToNextRound} infoDescription="NEXT ROUND" />
           <Info infoValue={info.percentageToCurrentRound} infoDescription="CURRENT ROUND" />
