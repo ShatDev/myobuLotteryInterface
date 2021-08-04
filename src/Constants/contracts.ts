@@ -6,8 +6,8 @@ interface contractsInterface {
 }
 
 const contracts = {
-  contractAddress: '0x11CD0418c31f5D57BeeC560082bB95A8cCC7570C',
-  network: 'rinkeby',
+  contractAddress: '0x9110b794988d108FaF5C19faC091359999E01602',
+  network: 'mainnet',
 } as contractsInterface
 
 export default contracts
