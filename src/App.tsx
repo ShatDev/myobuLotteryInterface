@@ -45,7 +45,7 @@ const OnlyMobileLotteryImage = styled.img`
 
 function App() {
   // Set to 0/0% when loading
-  const [info, setInfo] = useState<LotteryInfo | null>({
+  const [info, setInfo] = useState<LotteryInfo>({
     endTimestamp: 0,
     shrineFee: '0%',
     currentJackpot: 0,
@@ -58,23 +58,24 @@ function App() {
     myobuForEachTicket: 0,
     currentRoundNumber: 0,
   })
-  const forceUpdate = React.useReducer(() => ({}), {})[1] as () => void
+  async function updateInfo() {
+     let __info = await fetchLotteryInformation()
+     setInfo(__info)
+  }
   useEffect(() => {
     // 0 is default
     if (info!.currentRoundNumber === 0) {
       ;(async () => {
         InfuraConnectedContract.on('TicketsBought', () => {
-          forceUpdate()
+          updateInfo()
         })
-        let __info = await fetchLotteryInformation()
-        console.log(__info)
-        setInfo(__info)
+        await updateInfo()
       })()
     }
   })
   // prettier-ignore
   return (
-    <div style={{ width: '100%', height: '100%', overflowX: 'hidden', position: 'absolute' }}>
+    <div style={{ width: '100%', overflowX: 'hidden', position: 'absolute' }}>
       <Lottery>
         <BigText>
           FOUNTAIN <br /> OF FORTUNE
@@ -83,20 +84,20 @@ function App() {
         {/* prettier-ignore */}
         <DescriptionText>Welcome Guardian, to the Fountain Of Fortune! Throw some ETH in the magic fountain and receive your tickets. When the countdown hits 0, one lucky ticket holder will be awarded all the ETH in the prize pool.  Do you dare to test your luck? Read here for more details: <a href="https://medium.com">Medium</a></DescriptionText>
         <InfoDivision>
-          <Info infoValue={info?.percentageToNextRound!} infoDescription="NEXT ROUND" />
-          <Info infoValue={info?.percentageToCurrentRound!} infoDescription="CURRENT ROUND" />
-          <Info infoValue={formatNumber(info?.minimumMyobuBalance!, 1)} infoDescription="MINIMUM $MYOBU" />
-          <Info infoValue={formatNumber(info?.myobuForEachTicket!, 1)} infoDescription="$MYOBU PER TICKET" />
+          <Info infoValue={info.percentageToNextRound} infoDescription="NEXT ROUND" />
+          <Info infoValue={info.percentageToCurrentRound} infoDescription="CURRENT ROUND" />
+          <Info infoValue={formatNumber(info.minimumMyobuBalance, 1)} infoDescription="MINIMUM $MYOBU" />
+          <Info infoValue={formatNumber(info.myobuForEachTicket, 1)} infoDescription="$MYOBU PER TICKET" />
         </InfoDivision>
       </Lottery>
       <LotteryRound
-        currentTicketPrice={`${info!.ticketPrice} ETH`}
-        shrineFee={info!.shrineFee}
-        timeUntilDraw={info!.endTimestamp}
-        jackpot={`${info!.currentJackpot.toFixed(3)} ETH`}
-        ethForNextRound={`${info!.nextRound.toFixed(3)} ETH`}
-        ticketsSold={info!.ticketsSold}
-        currentRoundNumber={info!.currentRoundNumber}
+        currentTicketPrice={`${info.ticketPrice} ETH`}
+        shrineFee={info.shrineFee}
+        timeUntilDraw={info.endTimestamp}
+        jackpot={`${info.currentJackpot.toFixed(3)} ETH`}
+        ethForNextRound={`${info.nextRound.toFixed(3)} ETH`}
+        ticketsSold={info.ticketsSold}
+        currentRoundNumber={info.currentRoundNumber}
       />
     </div>
   )
